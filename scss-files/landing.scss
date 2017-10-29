@@ -1,0 +1,399 @@
+.home-banner{
+  min-height: 500px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent, transparent), url("../img/landscape-view2.jpg") top center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3rem 5rem;
+  h1{
+    color: whitesmoke;
+    font: {
+      size: 4rem;
+    }
+    text-align: center;
+    line-height: 0.4;
+    strong{
+      text-transform: uppercase;
+      color: whitesmoke;
+      font:{
+        size: 1rem;
+      }
+    }
+    margin-top: 5rem;
+  }
+  h3{
+    color: whitesmoke;
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  @include mq(500, max){
+    padding: 3rem 1rem;
+    h1{
+      line-height: normal;
+      font: {
+        size: 1.5rem;
+      }
+    }
+  }
+  .bottom-strip{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(23,42,21,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      background: lightgrey;
+    }
+    strong{
+      color: $aber-lightgreen;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0 2rem;
+      @include mq(500, max){
+        margin: 0 1rem;
+        font:{
+          size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+.welcome{
+  margin: 2rem 0;
+  padding: 2rem 5rem;
+  h3{
+    color: $aber-lightgreen;
+    font:{
+      weight: 300;
+    }
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .imagine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .step-img{
+      width: 90%;
+      img{
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+    .step{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: $aber-lightgreen;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem 0;
+      border: 4px solid $aber-lightgreen;
+      transition: all 500ms;
+      span{
+        color: whitesmoke;
+        font:{
+          size: 2rem;
+          weight: 600;
+        }
+        transition: color 500ms;
+      }
+    }
+    p{
+      text-align: center;
+      strong{
+        color: $aber-lightgreen;
+      }
+    }
+    &:hover{
+      .step{
+        background: transparent;
+        span{
+          color: $aber-lightgreen;
+        }
+      }
+    }
+  }
+  .pointer{
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid $aber-lightgreen;
+    border-right: 1px solid $aber-lightgreen;
+    border-left: 1px solid $aber-lightgreen;
+    border-radius: 15px;
+    position: relative;
+    margin-bottom: 4rem;
+    &:before{
+      content: '';
+      position: absolute;
+      bottom: -35px;
+      left: calc(50% - 35px);
+      border-top: 35px solid $aber-lightgreen;
+      border-right: 35px solid transparent;
+      border-left: 35px solid transparent;
+    }
+  }
+  .final{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    //flex-wrap: wrap;
+    padding-top: 2rem;
+    .final-img{
+      flex-basis: 40%;
+      text-align: center;
+      margin-right: 1rem;
+      img{
+        //width: 100%;
+        border-radius: 4px;
+      }
+    }
+    .final-write{
+      flex-basis: 55%;
+      padding-right: 4rem;
+      h4{
+        color: $aber-lightgreen;
+        font:{
+          weight: 300;
+        }
+      }
+      @include mq(1030, max){
+        padding-right: 0.2rem;
+      }
+    }
+    @include mq(950, max){
+      flex-wrap: wrap;
+      .final-img{
+        flex-basis: 100%;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        img{
+          width: 100%;
+        }
+      }
+      .final-write{
+        flex-basis: 100%;
+        h4{
+          text-align: center;
+        }
+        p{
+          text-align: center;
+        }
+      }
+    }
+  }
+  @include mq(550, max){
+    padding: 2rem 1rem;
+    h3{
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.contains{
+  margin-bottom: 2rem;
+  .contain{
+    display: flex;
+    align-items: center;
+    width: 74%;
+    margin: 2rem auto;
+    .contain-info{
+      flex-basis: 65%;
+      height: 100%;
+      &>div{
+        background: white;
+        padding: 2rem;
+        box-shadow: 0 2px 15px -1px lightgrey;
+        transform: translateX(45px);
+        border-radius: 3px;
+        h5{
+          font:{
+            weight: 100;
+          }
+          color: $aber-lightgreen;
+        }
+        &.no-translate{
+          transform: translateX(0px);
+        }
+      }
+    }
+    .contain-img{
+      flex-basis: 35%;
+      img{
+        width: 100%;
+      }
+    }
+    &:nth-child(2){
+      .contain-info{
+        &>div{
+          transform: translateX(-45px);
+          @include mq(1140, max){
+            transform: translateX(0px);
+          }
+        }
+      }
+    }
+    @include mq(1140, max){
+      width: 88%;
+    }
+    @include mq(985, max){
+      width: 96%;
+    }
+    @include mq(700, max){
+      width: 90%;
+      flex-wrap: wrap;
+      .contain-info{
+        flex-basis: 100%;
+      }
+      .contain-img{
+        flex-basis: 100%;
+        order: -1;
+        img{
+          width: 70%;
+          margin: 0 15%;
+        }
+      }
+    }
+  }
+}
+
+.partners{
+  width: 80%;
+  margin: 6rem auto;
+  h3{
+    text-align: center;
+    font:{
+      weight: 100;
+    }
+    color: $aber-lightgreen;
+  }
+  .partner-item{
+
+  }
+}
+
+.test-wrapper{
+  padding: 2rem 0 1.5rem 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.5), transparent), url('../img/footer.jpg') bottom center;
+  .testimonials{
+    width: 70%;
+    margin: 3rem auto;
+    h3{
+      font:{
+        weight: 600;
+      }
+      //#4DC7A0
+      color: #5cf8c9;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .testim-item{
+      margin: 2rem;
+      p{
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        color: #e1e1e1;
+        font:{
+          weight: 600;
+        }
+        em{
+          display: block;
+          text-align: center;
+          font:{
+            size: 0.76rem;
+          }
+          //color: $aber-darkgreen;
+        }
+        i{
+          color: $aber-lightgreen;
+          position: absolute;
+          &:first-child{
+            top: -10px;
+            left: -7px;
+          }
+          &:last-child{
+            bottom: -15px;
+            right: 0;
+          }
+        }
+      }
+      @include mq($tablet, max){
+        margin: 2rem 0;
+        p{
+          width: 90%;
+        }
+      }
+    }
+    @include mq($tablet, max){
+      width: 98%;
+    }
+  }
+}
+
+.subscribe{
+  width: 100%;
+  border-top: 1px solid $aber-lightgreen;
+  position: relative;
+  margin: 9rem 0;
+  form{
+    position: absolute;
+    top: -40px;
+    left: 12%;
+    width: 76%;
+    padding: 2rem;
+    box-shadow: 0 1px 15px 1px lightgrey;
+    background: white;
+    border-top: 4px solid $aber-lightgreen;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+      flex-basis: 30%;
+      margin: 0;
+    }
+    .form-group{
+      flex-basis: 68%;
+      display: flex;
+      margin: 0;
+      input{
+        border-radius: 0;
+      }
+      button{
+        border-radius: 0;
+      }
+    }
+    @include mq(700, max){
+      left: 5%;
+      width: 90%;
+    }
+    @include mq(580, max){
+      flex-wrap: wrap;
+      p{
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      .form-group{
+        flex-basis: 100%;
+      }
+    }
+    @include mq($mobile, max){
+      left: 2%;
+      width: 96%;
+    }
+  }
+}
