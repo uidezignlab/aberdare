@@ -8,9 +8,12 @@ $(document).ready(function () {
 
     //hide side nav
     var sideMenu = document.getElementById('side-menu');
+    var mapModal = document.getElementById('map-modal');
     window.onclick = function(event) {
         if (event.target === sideMenu) {
             $('.side-nav').removeClass('reveal');
+        }else if(event.target === mapModal){
+            $('.map-modal').removeClass('show-map');
         }
     };
 
@@ -49,6 +52,15 @@ $(document).ready(function () {
         typeSpeed: 80,
         loop: true,
         smartBackspace: true
+    });
+
+    $('.show-map-modal').on('click', function (e) {
+        e.preventDefault();
+       $('.map-modal').addClass('show-map');
+    });
+    $('.cancel').on('click', function (e) {
+        e.preventDefault();
+        $('.map-modal').removeClass('show-map');
     });
 
 });

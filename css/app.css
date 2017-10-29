@@ -457,4 +457,80 @@ p {
         left: 2%;
         width: 96%; } }
 
+.map-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 400ms; }
+  .map-modal .map-wrapper {
+    flex-basis: 94%;
+    height: 90%;
+    background: whitesmoke;
+    border-radius: 4px;
+    display: flex; }
+    .map-modal .map-wrapper .map {
+      flex-basis: 77%;
+      height: 100%;
+      background: white; }
+    .map-modal .map-wrapper .contact-info {
+      flex-basis: 23%;
+      height: 100%;
+      position: relative;
+      padding: 2rem 1rem; }
+      .map-modal .map-wrapper .contact-info h3 {
+        text-align: center; }
+      .map-modal .map-wrapper .contact-info p {
+        text-align: center;
+        font-size: 0.86rem; }
+      .map-modal .map-wrapper .contact-info .contact-information {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        .map-modal .map-wrapper .contact-info .contact-information span {
+          display: inline-block;
+          margin-bottom: 0.4rem; }
+      .map-modal .map-wrapper .contact-info .cancel-modal {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 1rem;
+        border-top: 1px solid lightgrey; }
+        .map-modal .map-wrapper .contact-info .cancel-modal a {
+          text-decoration: none;
+          display: inline-block;
+          padding: 2px 15px;
+          border: 1px solid #499142;
+          font-size: 0.8rem;
+          border-radius: 3px;
+          margin-right: 0.5rem; }
+          .map-modal .map-wrapper .contact-info .cancel-modal a i {
+            font-size: inherit; }
+          .map-modal .map-wrapper .contact-info .cancel-modal a.share-loc {
+            background: #499142;
+            color: whitesmoke; }
+            .map-modal .map-wrapper .contact-info .cancel-modal a.share-loc i {
+              color: inherit; }
+    @media (max-width: 62.5em) {
+      .map-modal .map-wrapper .map {
+        flex-basis: 100%; }
+      .map-modal .map-wrapper .contact-info {
+        display: none; } }
+  .map-modal.show-map {
+    visibility: visible;
+    opacity: 1; }
+
 /*# sourceMappingURL=app.css.map */
